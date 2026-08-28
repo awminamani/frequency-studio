@@ -48,6 +48,9 @@ const config: Config = {
           "sans-serif",
         ],
       },
+      gridTemplateColumns: {
+        "16": "repeat(16, minmax(0, 1fr))",
+      },
       boxShadow: {
         "glow-volt": "0 0 20px rgba(212, 255, 0, 0.35)",
         "glow-orange": "0 0 20px rgba(255, 85, 0, 0.35)",

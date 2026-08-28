@@ -157,14 +157,14 @@ export function useAudioEngine(onBeatTrigger?: (trackType: string, velocity: num
               break;
             case 'kick':
               if (samplers?.isLoaded && samplers.kick?.loaded) {
-                samplers.kick.start(time, 0, undefined, velocity);
+                samplers.kick.start(time, 0, undefined);
               } else {
                 synths.kickSynth.triggerAttackRelease('C1', '8n', time, velocity);
               }
               break;
             case 'snare':
               if (samplers?.isLoaded && samplers.snare?.loaded) {
-                samplers.snare.start(time, 0, undefined, velocity);
+                samplers.snare.start(time, 0, undefined);
               } else {
                 synths.snareSynth.triggerAttackRelease('16n', time, velocity);
               }
@@ -172,13 +172,13 @@ export function useAudioEngine(onBeatTrigger?: (trackType: string, velocity: num
             case 'hihat':
               if (pitch?.includes('open') || velocity > 0.85) {
                 if (samplers?.isLoaded && samplers.hihatOpen?.loaded) {
-                  samplers.hihatOpen.start(time, 0, undefined, velocity);
+                  samplers.hihatOpen.start(time, 0, undefined);
                 } else {
                   synths.hihatOpenSynth.triggerAttackRelease('8n', time, velocity);
                 }
               } else {
                 if (samplers?.isLoaded && samplers.hihatClosed?.loaded) {
-                  samplers.hihatClosed.start(time, 0, undefined, velocity);
+                  samplers.hihatClosed.start(time, 0, undefined);
                 } else {
                   synths.hihatClosedSynth.triggerAttackRelease('32n', time, velocity);
                 }
@@ -186,7 +186,7 @@ export function useAudioEngine(onBeatTrigger?: (trackType: string, velocity: num
               break;
             case 'perc':
               if (samplers?.isLoaded && samplers.perc?.loaded) {
-                samplers.perc.start(time, 0, undefined, velocity);
+                samplers.perc.start(time, 0, undefined);
               } else {
                 synths.percSynth.triggerAttackRelease('16n', time, velocity);
               }
